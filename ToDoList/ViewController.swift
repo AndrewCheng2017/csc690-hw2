@@ -49,12 +49,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            todoList?.remove(at: indexPath.row)
-            tableView.reloadData()
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete{
+//            todoList?.remove(at: indexPath.row)
+//            tableView.reloadData()
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -65,6 +65,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: { (action, indexPath) in
+            let alert = UIAlertController(title: "", message: "Editing Task", preferredStyle: .alert)
+            alert.addTextField(configurationHandler: { (textField) in
+                textField.text = todoList![indexPath.row].title
+            })
+            alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (updateAction) in
+                todoList![indexPath.row].title = alert.textFields!.first!.text!
+                saveData(todoList: todoList!)
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        })
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+            todoList!.remove(at: indexPath.row)
+            saveData(todoList: todoList!)
+            tableView.reloadData()
+        })
+
+        return [editAction, deleteAction]
     }
 }
 
