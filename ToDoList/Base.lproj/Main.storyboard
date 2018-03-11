@@ -18,14 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dv4-Ay-cwI">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dv4-Ay-cwI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dv4-Ay-cwI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1FN-6t-Owg"/>
+                            <constraint firstItem="Dv4-Ay-cwI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3EH-MB-VgY"/>
+                            <constraint firstItem="Dv4-Ay-cwI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lik-Sh-yWB"/>
+                            <constraint firstAttribute="trailing" secondItem="Dv4-Ay-cwI" secondAttribute="trailing" id="V0A-7V-ZXN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="e4a-NU-vlL">
@@ -51,16 +56,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-wW-936">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-wW-936">
                                 <rect key="frame" x="40" y="118" width="300" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsv-7a-W34">
-                                <rect key="frame" x="70" y="206" width="234" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsv-7a-W34">
+                                <rect key="frame" x="70" y="206" width="234" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
                                 <state key="normal" title="Create Task">
@@ -72,6 +75,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XHb-kM-nMC" firstAttribute="trailing" secondItem="dsv-7a-W34" secondAttribute="trailing" constant="71" id="6zx-cX-Y5e"/>
+                            <constraint firstItem="dsv-7a-W34" firstAttribute="top" secondItem="dcf-wW-936" secondAttribute="bottom" constant="58" id="EEf-dP-0H9"/>
+                            <constraint firstItem="XHb-kM-nMC" firstAttribute="trailing" secondItem="dcf-wW-936" secondAttribute="trailing" constant="35" id="H77-wD-EPc"/>
+                            <constraint firstItem="dsv-7a-W34" firstAttribute="top" secondItem="dcf-wW-936" secondAttribute="bottom" constant="58" id="b79-jz-Xma"/>
+                            <constraint firstItem="dcf-wW-936" firstAttribute="leading" secondItem="XHb-kM-nMC" secondAttribute="leading" constant="40" id="bw0-F6-VCu"/>
+                            <constraint firstItem="dcf-wW-936" firstAttribute="top" secondItem="XHb-kM-nMC" secondAttribute="top" constant="54" id="cqc-KY-Jeo"/>
+                            <constraint firstItem="dsv-7a-W34" firstAttribute="leading" secondItem="XHb-kM-nMC" secondAttribute="leading" constant="70" id="h56-sw-QpK"/>
+                            <constraint firstItem="XHb-kM-nMC" firstAttribute="trailing" secondItem="dsv-7a-W34" secondAttribute="trailing" constant="71" id="sLR-gZ-dZQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XHb-kM-nMC"/>
                     </view>
                     <connections>
